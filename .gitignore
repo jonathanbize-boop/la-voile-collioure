@@ -1,0 +1,11 @@
+# Dépendances / build
+node_modules/
+.vercel/
+
+# Système
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
