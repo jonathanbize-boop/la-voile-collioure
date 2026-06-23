@@ -3,7 +3,7 @@
    Système de design partagé — deux univers cohérents
    ===================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Dancing+Script:wght@500;600;700&family=Jost:wght@300;400;500;600&family=Kaushan+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Dancing+Script:wght@500;600;700&family=Jost:wght@300;400;500;600&family=Luckiest+Guy&display=swap');
 
 /* ---------- Tokens : LA VOILE (par défaut, restaurant) ---------- */
 :root{
@@ -77,7 +77,7 @@
   --hero-overlay:linear-gradient(180deg,rgba(31,18,36,.22) 0%,rgba(176,67,42,.20) 45%,rgba(31,18,36,.80) 100%);
   --shadow:0 18px 50px -22px rgba(31,18,36,.5);
   --gold:var(--amber);
-  --heading:'Kaushan Script','Segoe Script',cursive; /* titres manuscrits festifs — Balco del Mar */
+  --heading:'Luckiest Guy','Bricolage Grotesque',cursive; /* titres façon enseigne — proche du logo Balco del Mar */
 }
 
 /* ---------- Reset ---------- */
@@ -110,6 +110,11 @@ h2{font-size:clamp(2.4rem,6vw,4.4rem);line-height:1.12}
 h3{font-size:clamp(1.7rem,3.2vw,2.5rem);font-weight:600}
 /* Sous-titres / noms de plats : typo nette pour la lisibilité */
 h4{font-family:var(--display);font-weight:600;letter-spacing:0;line-height:1.25;font-size:1.12rem}
+/* Balco del Mar : titres façon enseigne (Luckiest Guy) — plus large/gras, donc tailles réduites */
+[data-univers="balco"] h1,[data-univers="balco"] h2,[data-univers="balco"] h3{font-weight:400;letter-spacing:.01em;line-height:1.06}
+[data-univers="balco"] h1{font-size:clamp(2.5rem,7vw,5.6rem)}
+[data-univers="balco"] h2{font-size:clamp(1.9rem,4.6vw,3.5rem)}
+[data-univers="balco"] h3{font-size:clamp(1.4rem,2.6vw,2rem)}
 p{max-width:64ch}
 .serif{font-family:var(--serif);font-style:italic;font-weight:500}
 
@@ -165,7 +170,10 @@ p{max-width:64ch}
 .nav__inner{width:100%;max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gut);
   display:flex;align-items:center;justify-content:space-between;gap:1rem}
 .nav__brand{display:flex;align-items:center;gap:.7rem}
+.nav__brand a{display:inline-flex;align-items:center}
 .nav__brand img{height:34px;width:auto;transition:height .4s var(--ease)}
+.nav__brand .brand-balco{height:42px}
+.brand-sep{width:1px;height:28px;background:var(--line-on-deep);flex:0 0 auto}
 .nav__links{display:flex;align-items:center;gap:2rem}
 .nav__links a{
   font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;font-weight:500;
@@ -187,6 +195,7 @@ p{max-width:64ch}
 /* état "scrolled" */
 .nav.is-solid{height:64px;background:var(--bg-deep);box-shadow:0 10px 30px -20px rgba(0,0,0,.6)}
 .nav.is-solid .nav__brand img{height:30px}
+.nav.is-solid .nav__brand .brand-balco{height:38px}
 
 /* burger */
 .nav__burger{display:none;width:46px;height:46px;flex-direction:column;justify-content:center;gap:5px;align-items:center}
@@ -411,6 +420,10 @@ p{max-width:64ch}
 [data-univers="balco"] .footer{background:var(--plum-900)}
 .footer__top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:2.5rem;padding-bottom:3rem;border-bottom:1px solid var(--line-on-deep)}
 .footer__brand img{height:52px;margin-bottom:1.2rem}
+.footer__logos{display:flex;align-items:center;gap:1rem;margin-bottom:1.3rem}
+.footer__logos img{height:46px;margin:0}
+.footer__logos .balco{height:58px}
+.footer__logos .brand-sep{height:40px}
 .footer__brand p{color:var(--text-on-deep-soft);font-size:.95rem;max-width:34ch}
 .footer h4{color:#fff;font-family:var(--sans);font-weight:500;font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:1.2rem}
 .footer ul li{margin-bottom:.7rem}
